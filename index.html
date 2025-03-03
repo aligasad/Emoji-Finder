@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Emojii</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="wrapper">
+    <h1>Emojee - Emoji 🔍 Application</h1>
+    
+    <div class="inpts">
+      <button onclick="searchSame('')" id="all">All</button>
+      <button onclick="searchSame('face')" id="face">Face</button>
+      <button onclick="searchSame('heart')" id="heart">Heart</button>
+      <button onclick="searchSame('book')" id="books">Book</button>
+      <button onclick="searchSame('hand')" id="hand">Hand</button>
+      <button onclick="searchSame('sport')" id="sport">Sport</button>
+      <button onclick="searchSame('flag')" id="flag">Flag</button>
+
+    <input type="text" placeholder="Search Anything...">
+    </div>
+    <div id="results"></div>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="emojiList.js"></script>
+</body>
+</html>

@@ -7,16 +7,20 @@
 
 body{
   padding: 20px;
-  background-color: #556B2F;
+  background-color: #008B8B;
 }
 #wrapper{
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  position: relative;
 }
+
+
+
 .inpts{
-  padding: 15px 0px;
+  padding: 15px 0px ;
   display: flex;
   column-gap: 10px;
 }
@@ -29,12 +33,13 @@ body{
 }
 .emoji{
   font-size: 45px;
+  cursor: pointer;
 }
 
 button{
   padding: 8px 18px;
   border-radius: 5px;
-  box-shadow:  5px -5px 8px rgba(0, 0, 0, 1);
+  box-shadow: inset  0px 0px 5px rgba(0, 0, 0, 1);
   border: none;
   background-color: #008B8B;
   color: white;
@@ -43,7 +48,7 @@ button{
 button:hover{
   transform: scale(1.1);
   background-color: #DC143C;
-  transition: 0.2s linear;
+  /* transition: 0.2s linear; */
   animation: xyz 0.3s linear;
 }
 
@@ -67,5 +72,21 @@ input{
   border-radius: 5px;
   box-shadow:  2px 2px 5px #000;
   border: none;
+  outline: none;
+}
 
+
+@media screen and (max-width: 600px) {
+  .inpts{
+    flex-wrap: wrap;
+    row-gap: 10px;
+    justify-content: space-evenly;
+  }
+  h1{
+    text-align: center;
+  }
+  .emoji{
+    font-size: 30px;
+    cursor: pointer;
+  }
 }

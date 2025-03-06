@@ -11,13 +11,15 @@ input.addEventListener('keyup', searchEmoji);
 
 function displayEmoji(arr) {
   results.innerHTML = "";
+  const fragment = document.createDocumentFragment();
   arr.forEach((obj)=>{
     const emoji = document.createElement('span');
     emoji.innerText = obj.emoji;
     emoji.classList.add('emoji');
-    results.append(emoji);
+    fragment.append(emoji);
+    emoji.addEventListener('click', ()=>clickToCopy(obj.emoji));
   });
-
+  results.append(fragment);
 }
 function searchEmoji() {
   const inputValue = input.value.toLowerCase();
@@ -41,5 +43,15 @@ function searchSame(emoji) {
   displayEmoji(faceArr);
   input.value = "";
   input.focus();
+}
+
+function clickToCopy(text) {
+  window.navigator.clipboard.writeText(text)
+  .then((response)=>{
+    alert("Emoji Copied Sucessfully");
+  })
+  .catch((error)=>{
+    alert("Something went wrong")
+  })
 }
 
